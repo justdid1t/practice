@@ -16,7 +16,7 @@ ll solve(ll a[],ll n, ll i,ll ts)
 
       if(sum > ts) return n;
       cnt++;
-      if(sum == ts) {mxseg = max(mxseg,cnt); cnt = 0; sum = 0; }
+      if(sum == ts) {  mxseg = max(mxseg,cnt); cnt = 0; sum = 0; }
 
    }
    if(mxseg == 0 || sum != 0) return n;
