@@ -18,35 +18,17 @@ int main()
 
    sort(v.begin(),v.end());
 
-   queue<int> cheap,exp;
-
-   for(int i=0; i<total; i++)
-   {
-       cheap.push(v[i]);
-   }
-
-   for(int i=0; i<total; i++) cheap.push(v[i]);
-
-   for(int i=total; i<n; i++) exp.push(v[i]);
-
    cout<<total<<endl;
-   if(cheap.size()==0)
+   for(int i=0; i<n-2; i+=2)
    {
-       for(auto x: v)
-       {
-           cout<<x<<" ";
-       }
+       int tmp = v[i];
+       v[i] = v[i+1];
+       v[i+1] = tmp;
    }
-   else{
-   for(int i=0; i<n; i++)
+
+   for(auto x: v)
    {
-       if(i%2 == 0) {cout<<exp.front()<<" "; exp.pop(); }
-       else
-       {
-           cout<<cheap.front()<<" ";
-           cheap.pop();
-       }
-   }
+       cout<<x<<" ";
    }
 
    cout<<endl;
