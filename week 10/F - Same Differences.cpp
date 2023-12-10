@@ -28,7 +28,7 @@ int main()
       for(int i=1; i<=n; i++)
       {
           ll x;  cin >> x;
-          mp[x-1]++;
+          mp[x-i]++;
       }
       ll cnt = 0;
       for(auto x: mp)
@@ -36,7 +36,7 @@ int main()
           ll f = x.second;
           if(f > 1)
           {
-             cnt += fact(f)/(fact(f-2)*2);
+             cnt += (f*(f-1))/2;
           }
       }
 
